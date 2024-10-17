@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="box">
+            <p>{{ title }}</p>
+            <p>{{ content }}</p>
+            <p>{{ output() }}</p>
+            <p>{{ output() }}</p>
+            <p>{{ outputContent }}</p>
+            <p>{{ outputContent }}</p>
+        </div>
+        <script src="vue.min.js"></script>
+        <script>
+            const vm = new Vue({
+                el: '#box',
+                data(){
+                    return{
+                        title: '这是标题内容',
+                        content: '这是内容文本',
+                    }
+                },
+                // 方法
+                methods: {
+                    output(){
+                        return '日'+ this.title + this.content
+                    }
+                },
+                // 计算属性
+                computed: {
+                    outputContent(){
+                        return  '日'+ this.title + this.content
+                    }
+                },
+                // 侦听器
+            })
+        </script>
+    </body>
+</html>
